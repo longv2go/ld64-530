@@ -4,7 +4,7 @@ Apple ld64
 
 可编译的连接器 ld64-530
 
-原来来自 Apple Open Source https://opensource.apple.com/tarballs/ld64/ld64-530.tar.gz
+源码来自 Apple Open Source https://opensource.apple.com/tarballs/ld64/ld64-530.tar.gz
 
 
 
