@@ -10,7 +10,7 @@ Apple ld64
 
 # 编译
 
-ld64 依赖 [tapi](https://opensource.apple.com/release/developer-tools-1131.html，这个库就是用来解析 .tbd 文件的。 libtapi.dylib 随着 Xcode 一起发布了，放在 `/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib`，不过没有对应的头文件。我已经将 ld64 需要依赖的头文件全部放在了 external-include 目录下。
+ld64 依赖 [tapi](https://opensource.apple.com/release/developer-tools-1131.html)，这个库就是用来解析 .tbd 文件的。 libtapi.dylib 随着 Xcode 一起发布了，放在 `/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib`，不过没有对应的头文件。我已经将 ld64 需要依赖的头文件全部放在了 external-include 目录下。
 
 
 
