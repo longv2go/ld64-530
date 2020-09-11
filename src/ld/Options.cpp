@@ -64,11 +64,11 @@ namespace lto {
 const int crashreporterBufferSize = 2000;
 static char crashreporterBuffer[crashreporterBufferSize];
 #if __MAC_OS_X_VERSION_MIN_REQUIRED >= 1070
-	#include <CrashReporterClient.h>
-	// hack until ld does not need to build on 10.6 anymore
-    struct crashreporter_annotations_t gCRAnnotations 
-        __attribute__((section("__DATA," CRASHREPORTER_ANNOTATIONS_SECTION))) 
-        = { CRASHREPORTER_ANNOTATIONS_VERSION, 0, 0, 0, 0, 0, 0 };
+//	#include <CrashReporterClient.h>
+//	// hack until ld does not need to build on 10.6 anymore
+//    struct crashreporter_annotations_t gCRAnnotations
+//        __attribute__((section("__DATA," CRASHREPORTER_ANNOTATIONS_SECTION)))
+//        = { CRASHREPORTER_ANNOTATIONS_VERSION, 0, 0, 0, 0, 0, 0 };
 #else
 	extern "C" char* __crashreporter_info__;
 	__attribute__((used)) 
@@ -5320,8 +5320,7 @@ void Options::reconfigureDefaults()
 			case Options::kStaticExecutable:
 			case Options::kKextBundle:
 				// <rdar://problem/14676611> 16KB segments for arm64 kexts
-				if ( (fArchitecture == CPU_TYPE_ARM64)
-					) {
+				if ( fArchitecture == CPU_TYPE_ARM64 ) {
 					fSegmentAlignment = 4096*4;
 				}
 				break;
@@ -6159,7 +6158,7 @@ void Options::checkForClassic(int argc, const char* argv[])
 	
 	// build command line buffer in case ld crashes
 #if __MAC_OS_X_VERSION_MIN_REQUIRED >= 1070
-	CRSetCrashLogMessage(crashreporterBuffer);
+//	CRSetCrashLogMessage(crashreporterBuffer);
 #endif
 	const char* srcRoot = getenv("SRCROOT");
 	if ( srcRoot != NULL ) {

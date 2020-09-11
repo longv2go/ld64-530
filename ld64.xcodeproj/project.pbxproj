@@ -792,7 +792,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/csh;
-			shellScript = "echo \"static const char *compile_stubs = \" > $DERIVED_FILE_DIR/compile_stubs.h\ncat compile_stubs | sed s/\\\"/\\\\\\\\\\\"/g | sed s/^/\\\"/ | sed s/\\$/\\\\\\\\n\\\"/ >> $DERIVED_FILE_DIR/compile_stubs.h\necho \";\" >> $DERIVED_FILE_DIR/compile_stubs.h";
+			shellScript = "echo \"static const char *compile_stubs = \" > $DERIVED_FILE_DIR/compile_stubs.h\ncat compile_stubs | sed s/\\\"/\\\\\\\\\\\"/g | sed s/^/\\\"/ | sed s/\\$/\\\\\\\\n\\\"/ >> $DERIVED_FILE_DIR/compile_stubs.h\necho \";\" >> $DERIVED_FILE_DIR/compile_stubs.h\n";
 			showEnvVarsInLog = 0;
 		};
 		F94E0A911CAC6B870092DC75 /* Add libtapi symlink */ = {
@@ -1099,7 +1099,7 @@
 				INSTALL_PATH = "$(DT_VARIANT)/$(TOOLCHAIN_INSTALL_DIR)/usr/local/bin";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = objcimageinfo;
-				SDKROOT = macosx.internal;
+				SDKROOT = "";
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -1125,7 +1125,7 @@
 				);
 				INSTALL_PATH = "$(DT_VARIANT)/$(TOOLCHAIN_INSTALL_DIR)/usr/local/bin";
 				PRODUCT_NAME = objcimageinfo;
-				SDKROOT = macosx.internal;
+				SDKROOT = "";
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -1151,7 +1151,7 @@
 				);
 				INSTALL_PATH = "$(DT_VARIANT)/$(TOOLCHAIN_INSTALL_DIR)/usr/local/bin";
 				PRODUCT_NAME = objcimageinfo;
-				SDKROOT = macosx.internal;
+				SDKROOT = "";
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -1223,8 +1223,9 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = ld;
-				SDKROOT = macosx.internal;
+				SDKROOT = "";
 				SECTORDER_FLAGS = "";
+				SYSTEM_HEADER_SEARCH_PATHS = "$(SRCROOT)/external-include";
 				TOOLCHAINS = osx;
 				VERSIONING_SYSTEM = "apple-generic";
 				WARNING_CFLAGS = (
@@ -1299,10 +1300,11 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = ld;
-				SDKROOT = macosx.internal;
+				SDKROOT = "";
 				SECTORDER_FLAGS = "";
 				STRIP_INSTALLED_PRODUCT = YES;
 				STRIP_STYLE = debugging;
+				SYSTEM_HEADER_SEARCH_PATHS = "$(SRCROOT)/external-include";
 				TOOLCHAINS = osx;
 				VALID_ARCHS = "x86_64 i386 ppc";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1336,6 +1338,7 @@
 					"$(DT_TOOLCHAIN_DIR)/usr/local/include",
 					"$(TOOLCHAIN_DIR)/usr/local/include",
 					"$(SRCROOT)/src/ld",
+					"$(SRCROOT)/external-include",
 				);
 				INSTALL_PATH = "$(DT_VARIANT)/$(TOOLCHAIN_INSTALL_DIR)/usr/local/bin";
 				ONLY_ACTIVE_ARCH = NO;
@@ -1347,7 +1350,7 @@
 				OTHER_REZFLAGS = "";
 				PREBINDING = NO;
 				PRODUCT_NAME = ObjectDump;
-				SDKROOT = macosx.internal;
+				SDKROOT = "";
 				SECTORDER_FLAGS = "";
 				WARNING_CFLAGS = (
 					"-Wmost",
@@ -1372,6 +1375,7 @@
 					"$(DT_TOOLCHAIN_DIR)/usr/local/include",
 					"$(TOOLCHAIN_DIR)/usr/local/include",
 					"$(SRCROOT)/src/ld",
+					"$(SRCROOT)/external-include",
 				);
 				INSTALL_PATH = "$(DT_VARIANT)/$(TOOLCHAIN_INSTALL_DIR)/usr/local/bin";
 				OTHER_CPLUSPLUSFLAGS = (
@@ -1382,7 +1386,7 @@
 				OTHER_REZFLAGS = "";
 				PREBINDING = NO;
 				PRODUCT_NAME = ObjectDump;
-				SDKROOT = macosx.internal;
+				SDKROOT = "";
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -1462,6 +1466,7 @@
 				COPY_PHASE_STRIP = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				PRODUCT_NAME = "unit-tests";
+				SDKROOT = "";
 			};
 			name = Debug;
 		};
@@ -1471,6 +1476,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				PRODUCT_NAME = "unit-tests";
+				SDKROOT = "";
 			};
 			name = Release;
 		};
@@ -1513,6 +1519,7 @@
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				PRODUCT_NAME = all;
+				SDKROOT = "";
 				ZERO_LINK = NO;
 			};
 			name = "Release-assert";
@@ -1580,10 +1587,11 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = ld;
-				SDKROOT = macosx.internal;
+				SDKROOT = "";
 				SECTORDER_FLAGS = "";
 				STRIP_INSTALLED_PRODUCT = YES;
 				STRIP_STYLE = debugging;
+				SYSTEM_HEADER_SEARCH_PATHS = "$(SRCROOT)/external-include";
 				TOOLCHAINS = osx;
 				VALID_ARCHS = "x86_64 i386 ppc";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1616,7 +1624,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = unwinddump;
-				SDKROOT = macosx.internal;
+				SDKROOT = "";
 				STRIP_INSTALLED_PRODUCT = YES;
 				STRIP_STYLE = debugging;
 			};
@@ -1638,6 +1646,7 @@
 					"$(DT_TOOLCHAIN_DIR)/usr/local/include",
 					"$(TOOLCHAIN_DIR)/usr/local/include",
 					"$(SRCROOT)/src/ld",
+					"$(SRCROOT)/external-include",
 				);
 				INSTALL_PATH = "$(DT_VARIANT)/$(TOOLCHAIN_INSTALL_DIR)/usr/local/bin";
 				OTHER_CPLUSPLUSFLAGS = (
@@ -1648,7 +1657,7 @@
 				OTHER_REZFLAGS = "";
 				PREBINDING = NO;
 				PRODUCT_NAME = ObjectDump;
-				SDKROOT = macosx.internal;
+				SDKROOT = "";
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -1674,7 +1683,7 @@
 				OTHER_LDFLAGS = "-stdlib=libc++";
 				PREBINDING = NO;
 				PRODUCT_NAME = machocheck;
-				SDKROOT = macosx.internal;
+				SDKROOT = "";
 			};
 			name = "Release-assert";
 		};
@@ -1696,7 +1705,7 @@
 				OTHER_LDFLAGS = "-stdlib=libc++";
 				PREBINDING = NO;
 				PRODUCT_NAME = dyldinfo;
-				SDKROOT = macosx.internal;
+				SDKROOT = "";
 				STRIP_INSTALLED_PRODUCT = YES;
 				STRIP_STYLE = debugging;
 				ZERO_LINK = NO;
@@ -1720,6 +1729,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = prunetrie;
+				SDKROOT = "";
 			};
 			name = "Release-assert";
 		};
@@ -1729,6 +1739,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				PRODUCT_NAME = "unit-tests";
+				SDKROOT = "";
 			};
 			name = "Release-assert";
 		};
@@ -1750,6 +1761,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = prunetrie;
+				SDKROOT = "";
 			};
 			name = Debug;
 		};
@@ -1770,6 +1782,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = prunetrie;
+				SDKROOT = "";
 			};
 			name = Release;
 		};
@@ -1781,6 +1794,7 @@
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				PRODUCT_NAME = all;
+				SDKROOT = "";
 			};
 			name = Debug;
 		};
@@ -1791,6 +1805,7 @@
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				PRODUCT_NAME = all;
+				SDKROOT = "";
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -1814,7 +1829,7 @@
 				OTHER_LDFLAGS = "-stdlib=libc++";
 				PREBINDING = NO;
 				PRODUCT_NAME = unwinddump;
-				SDKROOT = macosx.internal;
+				SDKROOT = "";
 			};
 			name = Debug;
 		};
@@ -1837,7 +1852,7 @@
 				OTHER_LDFLAGS = "-Wl,-exported_symbol,__mh_execute_header";
 				PREBINDING = NO;
 				PRODUCT_NAME = unwinddump;
-				SDKROOT = macosx.internal;
+				SDKROOT = "";
 				STRIP_INSTALLED_PRODUCT = YES;
 				STRIP_STYLE = debugging;
 			};
@@ -1872,7 +1887,7 @@
 				OTHER_LDFLAGS = "-stdlib=libc++";
 				PREBINDING = NO;
 				PRODUCT_NAME = dyldinfo;
-				SDKROOT = macosx.internal;
+				SDKROOT = "";
 				WARNING_CFLAGS = "-Wall";
 			};
 			name = Debug;
@@ -1895,7 +1910,7 @@
 				OTHER_LDFLAGS = "-stdlib=libc++";
 				PREBINDING = NO;
 				PRODUCT_NAME = dyldinfo;
-				SDKROOT = macosx.internal;
+				SDKROOT = "";
 				STRIP_INSTALLED_PRODUCT = YES;
 				STRIP_STYLE = debugging;
 				ZERO_LINK = NO;
@@ -1919,7 +1934,7 @@
 				OTHER_LDFLAGS = "-stdlib=libc++";
 				PREBINDING = NO;
 				PRODUCT_NAME = machocheck;
-				SDKROOT = macosx.internal;
+				SDKROOT = "";
 			};
 			name = Debug;
 		};
@@ -1940,7 +1955,7 @@
 				OTHER_LDFLAGS = "-stdlib=libc++";
 				PREBINDING = NO;
 				PRODUCT_NAME = machocheck;
-				SDKROOT = macosx.internal;
+				SDKROOT = "";
 			};
 			name = Release;
 		};
